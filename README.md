@@ -1,1 +1,0 @@
-# dmytro-sych.github.io
