@@ -192,6 +192,45 @@
             border-radius: 20px;
             font-size: 0.9rem;
         }
+
+        /* ===== СТИЛІ ДЛЯ ІНТЕРАКТИВНИХ КАРТОК (ДОДАНО) ===== */
+        .resource-card {
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .resource-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            border-left-width: 6px;
+        }
+        
+        .resource-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .resource-card p {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-link {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        /* ===== КІНЕЦЬ ДОДАНИХ СТИЛІВ ===== */
         
         .contact-info {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -390,18 +429,48 @@
             </div>
         </section>
         
+        <!-- ===== РОЗДІЛ ДЛЯ УЧНІВ (ОНОВЛЕНО З ІНТЕРАКТИВНИМИ КАРТКАМИ) ===== -->
         <section id="students">
             <h2>📝 Для учнів</h2>
             
-            <h3>Корисні матеріали з математики:</h3>
-            <ul style="margin: 1rem 0 1rem 2rem; line-height: 2;">
-                <li>📐 <strong>Формули:</strong> Основні формули алгебри та геометрії</li>
-                <li>📊 <strong>Приклади розв'язків:</strong> Детальні пояснення типових задач</li>
-                <li>🎯 <strong>Підготовка до НМТ:</strong> Тести та завдання</li>
-                <li>🔗 <strong>Онлайн-ресурси:</strong> GeoGebra, Khan Academy (українською)</li>
-            </ul>
+            <h3 style="margin-bottom: 1rem;">Корисні матеріали з математики:</h3>
             
-            <div style="background: #fff5f5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #fc8181; margin-top: 1.5rem;">
+            <!-- Інтерактивні картки замість списку -->
+            <div class="info-grid">
+                <!-- Картка 1: Формули -->
+                <a href="#" class="resource-card" onclick="alert('Додайте посилання на Google Drive папку з формулами'); return false;">
+                    <h3>📐 Формули</h3>
+                    <p>Основні формули алгебри та геометрії для всіх класів</p>
+                    <span class="resource-link">→ Відкрити матеріали</span>
+                </a>
+                
+                <!-- Картка 2: Приклади розв'язків -->
+                <a href="#" class="resource-card" onclick="alert('Додайте посилання на Google Drive папку з прикладами'); return false;">
+                    <h3>📊 Приклади розв'язків</h3>
+                    <p>Детальні пояснення типових задач з покроковими розв'язками</p>
+                    <span class="resource-link">→ Відкрити матеріали</span>
+                </a>
+                
+                <!-- Картка 3: Підготовка до НМТ -->
+                <a href="#" class="resource-card" onclick="alert('Додайте посилання на Google Drive папку з тестами НМТ'); return false;">
+                    <h3>🎯 Підготовка до НМТ</h3>
+                    <p>Тести, завдання та матеріали для підготовки до НМТ з математики</p>
+                    <span class="resource-link">→ Відкрити матеріали</span>
+                </a>
+                
+                <!-- Картка 4: Онлайн-ресурси -->
+                <div class="resource-card" style="cursor: default; border-left-color: #48bb78;">
+                    <h3 style="color: #2f855a;">🔗 Онлайн-ресурси</h3>
+                    <p style="margin-bottom: 1rem;">Корисні сайти для вивчення математики:</p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><a href="https://www.geogebra.org" target="_blank" style="color: #667eea;">GeoGebra</a> - інтерактивна математика</li>
+                        <li><a href="https://uk.khanacademy.org" target="_blank" style="color: #667eea;">Khan Academy</a> - уроки українською</li>
+                        <li><a href="https://www.desmos.com/calculator" target="_blank" style="color: #667eea;">Desmos</a> - графічний калькулятор</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #fff5f5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #fc8181; margin-top: 2rem;">
                 <h3 style="color: #c53030;">💡 Порада дня</h3>
                 <p style="margin-top: 0.5rem;">
                     "Математика — це не про запам'ятовування формул, а про розуміння логіки. 
@@ -409,6 +478,7 @@
                 </p>
             </div>
         </section>
+        <!-- ===== КІНЕЦЬ ОНОВЛЕНОГО РОЗДІЛУ ===== -->
         
         <section id="resources">
             <h2>📚 Джерела знань</h2>
