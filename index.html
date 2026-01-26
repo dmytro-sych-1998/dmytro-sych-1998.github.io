@@ -23,6 +23,29 @@
             padding: 3rem 2rem;
             text-align: center;
         }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-text {
+            text-align: left;
+        }
         
         header h1 {
             font-size: 2.5rem;
@@ -32,6 +55,16 @@
         header p {
             font-size: 1.2rem;
             opacity: 0.95;
+        }
+
+         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .header-text {
+                text-align: center;
+            }
         }
         
         nav {
@@ -203,9 +236,14 @@
 </head>
 <body>
     <header>
-        <h1>Сич Дмитро Вікторович</h1>
-        <p>Вчитель математики, фізики та інформатики</p>
-        <p>Таращанська гімназія "Освіторія"</p>
+        <div class="header-content">
+            <img src="photo/0x0.jpg" alt="Сич Дмитро" class="profile-photo">
+            <div class="header-text">
+                <h1>Сич Дмитро Вікторович</h1>
+                <p>Вчитель математики, фізики та інформатики</p>
+                <p>Таращанська гімназія "Освіторія"</p>
+            </div>
+        </div>
     </header>
     
     <nav>
