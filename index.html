@@ -127,6 +127,30 @@
         nav a:hover {
             color: #667eea;
         }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 6px;
+            color: white;
+            font-size: 1.5rem;
+            padding: 0.3rem 0.7rem;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+        }
         
         .container {
             max-width: 1000px;
@@ -456,20 +480,114 @@
             font-size: 1.1rem;
         }
         
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-        }
+       @media (max-width: 768px) {
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    nav {
+        padding: 0.6rem 1rem;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2d3748;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0.5rem 0 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+        scroll-margin-top: 70px;
+    }
+
+    .hero {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .info-grid,
+    .subjects {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+}
+    @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+        
     </style>
+    
 </head>
 <body>
     <header>
@@ -483,8 +601,17 @@
         </div>
     </header>
     
-    <nav>
-        <ul>
+<nav>
+    <div class="nav-container">
+
+        <button class="menu-toggle"
+                aria-label="Відкрити меню"
+                aria-expanded="false"
+                aria-controls="main-menu">
+            ☰
+        </button>
+
+        <ul id="main-menu" class="nav-menu">
             <li><a href="#">На головну</a></li>
             <li><a href="#about">Про мене</a></li>
             <li><a href="#projects">Проєкти</a></li>
@@ -495,7 +622,9 @@
             <li><a href="#schedule">Розклад</a></li>
             <li><a href="#contact">Контакти</a></li>
         </ul>
-    </nav>
+
+    </div>
+</nav>
     
     <div class="container">
         <section class="hero">
@@ -965,6 +1094,31 @@
         });
     </script>
     <!-- ===== КІНЕЦЬ JAVASCRIPT ===== -->
-    
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Закрити меню' : 'Відкрити меню'
+        );
+
+        menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Відкрити меню');
+            menuToggle.textContent = '☰';
+        });
+    });
+</script>    
 </body>
 </html>
