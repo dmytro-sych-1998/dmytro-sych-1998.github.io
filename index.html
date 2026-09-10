@@ -159,6 +159,66 @@
             max-width: 700px;
             margin: 0 auto;
         }
+
+        .hero-label {
+             color: #667eea;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h2 {
+            font-size: 2.3rem;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4a5568;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 0.8rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+        }
+
+        .secondary-btn {
+            border: 2px solid #667eea;
+            color: #667eea;
+            background: white;
+        }
         
         .subjects {
             display: grid;
@@ -439,14 +499,23 @@
     <div class="container">
         <section class="hero">
             <div class="hero-content">
-                <h2>🎓 Вітаю на моєму сайті!</h2>
-                <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.8;">
-                    Я - вчитель математики, фізики та інформатики, але моя справжня любов — це <strong>математика</strong>. 
-                    Вірю, що кожен учень може полюбити цей предмет, якщо знайти правильний підхід. 
-                    Мета моїх уроків — не просто навчити формулам, а показати красу математичного мислення.
+                <p class="hero-label">МАТЕМАТИКА • ЗАДАЧІ • ТЕХНОЛОГІЇ</p>
+                <h2>Математика, яку хочеться зрозуміти</h2>
+                <p class="hero-description">
+                    Для мене математика — це не набір формул, а спосіб мислення.
+                    На уроках і в авторських матеріалах поєдную задачі,
+                    математичне моделювання, технології та ігрові підходи.
                 </p>
+                <div class="hero-buttons">
+                    <a href="#students" class="hero-btn primary-btn">
+                        Матеріали для учнів
+                    </a>
+                    <a href="#projects" class="hero-btn secondary-btn">
+                        Мої проєкти
+                    </a>
+                </div>
                 <div class="formula">
-                    ∫ знання dx = успіх + С
+                    ∫ знання dx = успіх + C
                 </div>
             </div>
         </section>
