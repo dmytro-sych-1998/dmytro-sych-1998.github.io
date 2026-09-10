@@ -90,6 +90,18 @@
             opacity: 0.95;
         }
 
+       a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #dd6b20;
+            outline-offset: 4px;
+            border-radius: 4px;
+    }
+
+        .certificate-card:focus-visible {
+            outline: 3px solid #dd6b20;
+            outline-offset: 4px;
+    } 
+
          @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -286,6 +298,29 @@
         .info-item h3 {
             color: #2d3748;
             margin-bottom: 0.5rem;
+        }
+
+        .certificate-card {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-left-width 0.2s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            border-left-width: 6px;
+        }
+
+        .certificate-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4c51bf;
+            font-weight: 700;
         }
         
         .hobby-list {
@@ -741,28 +776,41 @@
                 Постійно навчаюся та розвиваюся, щоб бути кращим вчителем для своїх учнів.
             </p>
             
-            <div class="info-grid">
-                <div class="info-item" style="cursor: pointer; transition: all 0.3s;" onclick="window.open('certificates/certificate_math.pdf', '_blank')">
-                    <h3>📜 Математичний напрямок</h3>
-                    <p style="margin-top: 1rem; color: #667eea; font-weight: bold;">📥 Завантажити PDF →</p>
-                </div>
+<div class="info-grid">
 
-                <div class="info-item" style="cursor: pointer; transition: all 0.3s;" onclick="window.open('certificates/certificate_ph.pdf', '_blank')">
-                    <h3>📜 Фізичний напрямок</h3>
-                    <p style="margin-top: 1rem; color: #667eea; font-weight: bold;">📥 Завантажити PDF →</p>
-                </div>
+    <a href="certificates/certificate_math.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="info-item certificate-card">
+        <h3>📜 Математичний напрямок</h3>
+        <span class="certificate-link">Переглянути PDF →</span>
+    </a>
 
-                <div class="info-item" style="cursor: pointer; transition: all 0.3s;" onclick="window.open('certificates/certificate_cs_it.pdf', '_blank')">
-                    <h3>📜 Інформатичний напрямок</h3>
-                    <p style="margin-top: 1rem; color: #667eea; font-weight: bold;">📥 Завантажити PDF →</p>
-                </div>
+    <a href="certificates/certificate_ph.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="info-item certificate-card">
+        <h3>📜 Фізичний напрямок</h3>
+        <span class="certificate-link">Переглянути PDF →</span>
+    </a>
 
-                <div class="info-item" style="cursor: pointer; transition: all 0.3s;" onclick="window.open('certificates/certificates_general.pdf', '_blank')">
-                    <h3>📜 Міждисциплінарний напрямок</h3>
-                    <p style="margin-top: 1rem; color: #667eea; font-weight: bold;">📥 Завантажити PDF →</p>
-                </div>
-                
-            </div>
+    <a href="certificates/certificate_cs_it.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="info-item certificate-card">
+        <h3>📜 Інформатичний напрямок</h3>
+        <span class="certificate-link">Переглянути PDF →</span>
+    </a>
+
+    <a href="certificates/certificates_general.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="info-item certificate-card">
+        <h3>📜 Міждисциплінарний напрямок</h3>
+        <span class="certificate-link">Переглянути PDF →</span>
+    </a>
+
+</div>
             
             <h3 style="color: #2d3748; margin-top: 2rem;">📚 Основні напрямки розвитку:</h3>
             <ul style="margin: 1rem 0 1rem 2rem; line-height: 2;">
