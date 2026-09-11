@@ -588,9 +588,17 @@
       </a>
     <header>
         <div class="header-content">
-            <img src="photo/photo1.png"
-                 alt="Дмитро Сич"
-                 class="profile-photo">
+            <picture>
+                <source srcset="photo/photo3.webp" type="image/webp">
+
+                <img src="photo/photo1.png"
+                     alt="Дмитро Сич"
+                     class="profile-photo"
+                     width="180"
+                     height="180"
+                     fetchpriority="high"
+                     decoding="async">
+            </picture>
             <div class="header-text">
                 <h1>Сич Дмитро Вікторович</h1>
                 <p>Вчитель математики, фізики та інформатики</p>
